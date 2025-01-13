@@ -25,7 +25,7 @@ public class EmailUtils {
             Folder emailFolder = store.getFolder("INBOX");
             emailFolder.open(Folder.READ_ONLY);
 
-            // Esperar hasta que llegue el último correo con el código OTP
+            // Esperar hasta que llegue el último correo con el código OTP.
             String otp = null;
             while (otp == null) {
                 Message[] messages = emailFolder.search(new FlagTerm(new Flags(Flags.Flag.SEEN), false));
