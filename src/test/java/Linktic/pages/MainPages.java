@@ -71,7 +71,7 @@ public class MainPages {
         });
 
         try {
-            Thread.sleep(5000); // Esperar 5 segundos para dar tiempo a que se genere el OTP
+            Thread.sleep(6000); // Esperar 5 segundos para dar tiempo a que se genere el OTP
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

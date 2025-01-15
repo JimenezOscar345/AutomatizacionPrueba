@@ -2,9 +2,10 @@
 <suite name="Testderegre">
     <test name="Linktic">
     <classes>
-        <class name="Linktic.tests.MainTest"> </class>
+        <class name="Linktic.tests.LoginTest"/>
         <class name="Linktic.tests.CotizacionTest" />
         <class name="Linktic.tests.AccionesTest" />
+        <class name="Linktic.tests.EmitirPolizaTest" />
     </classes>
     </test>
 </suite>

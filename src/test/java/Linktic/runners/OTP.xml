@@ -3,6 +3,7 @@
     <test name="LoginTest">
         <classes>
             <class name="Linktic.tests.LoginTest" />
+
         </classes>
     </test>
 </suite>
