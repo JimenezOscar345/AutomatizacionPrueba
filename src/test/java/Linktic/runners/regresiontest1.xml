@@ -4,6 +4,7 @@
     <classes>
         <class name="Linktic.tests.MainTest"> </class>
         <class name="Linktic.tests.CotizacionTest" />
+        <class name="Linktic.tests.AccionesTest" />
     </classes>
     </test>
 </suite>
