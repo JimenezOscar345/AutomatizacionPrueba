@@ -1,10 +1,10 @@
 package Linktic.pages;
 
 import Linktic.utils.ConfigReader;
-import org.openqa.selenium.JavascriptExecutor;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.devtools.DevTools;
 import org.openqa.selenium.devtools.v85.network.Network;
 import org.openqa.selenium.devtools.v85.network.model.Response;
@@ -71,7 +71,7 @@ public class MainPages {
         });
 
         try {
-            Thread.sleep(6000); // Esperar 5 segundos para dar tiempo a que se genere el OTP
+            Thread.sleep(9000); // Esperar 9 segundos para dar tiempo a que se genere el OTP
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -86,5 +86,19 @@ public class MainPages {
             return matcher.group(1);
         }
         return null;
+    }
+
+    public static void main(String[] args) {
+        WebDriverManager.chromedriver().setup();
+        WebDriver driver = new ChromeDriver();
+        driver.get("https://www.google.com");
+
+        MainPages mainPages = new MainPages(driver);
+        mainPages.login();
+        mainPages.clic();
+        mainPages.enterOTP();
+
+        // Cierra el navegador después de la prueba
+        driver.quit();
     }
 }
