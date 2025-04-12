@@ -13,6 +13,7 @@
         <maven.compiler.target>11</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
     <repositories>
         <repository>
             <id>central</id>
@@ -23,60 +24,57 @@
             <url>https://jitpack.io</url>
         </repository>
     </repositories>
+
     <dependencies>
-        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
-            <version>4.25.0</version>
+            <version>4.27.0</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.testng/testng -->
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
             <version>7.10.2</version>
-
         </dependency>
-        <!-- https://mvnrepository.com/artifact/com.github.bonigarcia/webdrivermanager -->
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
             <version>5.8.0</version>
         </dependency>
-
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
-            <version>1.7.36</version> <!-- Usa la versión más reciente compatible -->
+            <version>1.7.36</version>
         </dependency>
-
-        <!-- Logback como implementación SLF4J -->
+        <dependency>
+            <groupId>com.jcraft</groupId>
+            <artifactId>jsch</artifactId>
+            <version>0.1.55</version>
+        </dependency>
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
-            <version>1.4.12</version> <!-- Usa la versión más reciente compatible -->
+            <version>1.4.12</version>
         </dependency>
-
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-simple</artifactId>
             <version>1.7.36</version>
         </dependency>
-
         <dependency>
             <groupId>com.microsoft.sqlserver</groupId>
             <artifactId>mssql-jdbc</artifactId>
-            <version>11.2.0.jre11</version> <!-- Usa la versión compatible con tu JRE -->
+            <version>11.2.0.jre11</version>
         </dependency>
         <dependency>
             <groupId>org.json</groupId>
             <artifactId>json</artifactId>
-            <version>20231013</version> <!-- o la última versión -->
+            <version>20231013</version>
         </dependency>
         <dependency>
             <groupId>org.hamcrest</groupId>
             <artifactId>hamcrest</artifactId>
-            <version>2.2</version> <!-- o la versión que estés utilizando -->
+            <version>2.2</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -105,15 +103,14 @@
             <artifactId>postgresql</artifactId>
             <version>42.2.18</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/junit/junit -->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.13.2</version>
             <scope>test</scope>
         </dependency>
-
     </dependencies>
+
     <build>
         <plugins>
             <plugin>
@@ -124,7 +121,6 @@
                     <source>11</source>
                     <target>11</target>
                     <fork>true</fork>
-                    <!--suppress UnresolvedMavenProperty -->
                     <executable>${JAVA_HOME}/bin/javac</executable>
                 </configuration>
             </plugin>
@@ -135,20 +131,21 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>veridify.pages.MainPage</mainClass> <!-- Cambia esto -->
+                            <mainClass>Oscar.Pages.LoginOTP</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
             </plugin>
-            <plugin> <groupId>org.apache.maven.plugins</groupId>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.22.2</version>
-                <configuration> <includes>
-                    <include>**/*Test.java</include>
-                </includes>
+                <configuration>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>src/test/Java/Oscar/runners/OTP.xml</suiteXmlFile>
+                    </suiteXmlFiles>
                 </configuration>
             </plugin>
         </plugins>
     </build>
-
 </project>
