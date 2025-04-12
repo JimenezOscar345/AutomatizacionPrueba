@@ -1,9 +1,0 @@
-<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Testderegre">
-    <test name="Linktic">
-        <classes>
-            <class name="Linktic.tests.MainTest" />
-            <class name="Linktic.tests.AccionesTest" />
-        </classes>
-    </test>
-</suite>

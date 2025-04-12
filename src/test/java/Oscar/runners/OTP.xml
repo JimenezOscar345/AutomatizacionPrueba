@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Registro Suite">
+    <test name="Registro Tests">
+        <classes>
+            <class name="Linktic.test.RegisterTest"/>
+        </classes>
+    </test>
+</suite>
